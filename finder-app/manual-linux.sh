@@ -81,8 +81,8 @@ make CONFIG_PREFIX=${OUTDIR}/rootfs ARCH=${ARCH} CROSS_COMPILE=${CROSS_COMPILE} 
 
 echo "Library dependencies"
 cd ${OUTDIR}/rootfs
-${CROSS_COMPILE}readelf -a /bin/busybox | grep "program interpreter"
-${CROSS_COMPILE}readelf -a /bin/busybox | grep "Shared library"
+${CROSS_COMPILE}readelf -a bin/busybox | grep "program interpreter"
+${CROSS_COMPILE}readelf -a bin/busybox | grep "Shared library"
 
 # TODO: Add library dependencies to rootfs
 Loc=$(aarch64-none-linux-gnu-gcc -print-sysroot)
